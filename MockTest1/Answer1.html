@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ===============static example======== */
+        .static-example {
+            position: static;  
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        /* =====================fixed example=========== */
+        
+    .fixed-example {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    /* ==================  sticky - example ========================== */
+    .sticky-example {
+        position: sticky;
+        top: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+
+    /* ========================== absolute - example ==================================== */
+    .absolute-example {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: purple; 
+    }
+</style>
+    </style>
+</head>
+<body>
+    <!-- ==========static body ==================== -->
+ <div class="static-example">
+    This is a static element.
+</div>
+    <!-- =================fixed body exmple -->
+    
+<div class="fixed-example">
+    This is a fixed element.
+</div>
+
+<!--  ******************* stick - body ******************** -->
+
+<div class="sticky-example">
+    This is a sticky element.
+</div>
+
+<!-- ************************************** -->
+<div style="position: relative;">
+    <div class="absolute-example">
+        This is an absolute element.
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+    
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var phone = document.forms["myForm"]["phone"].value;
+            var password = document.forms["myForm"]["password"].value;
+            var age = document.forms["myForm"]["age"].value;
+            var gender = document.forms["myForm"]["gender"].value;
+            var date = document.forms["myForm"]["date"].value;
+            var color = document.forms["myForm"]["color"].value;
+    
+            // Name validation
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+    
+            // Email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email address");
+                return false;
+            }
+    
+            // Phone number validation
+            var phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Invalid phone number");
+                return false;
+            }
+    
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+    
+            // Age validation
+            if (age < 18 || age > 100) {
+                alert("Age must be between 18 and 100");
+                return false;
+            }
+    
+            // Gender validation
+            if (gender == "") {
+                alert("Please select a gender");
+                return false;
+            }
+    
+            // Date validation
+            if (date == "") {
+                alert("Date must be filled out");
+                return false;
+            }
+    
+            // Color validation
+            if (color == "") {
+                alert("Please select a color");
+                return false;
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    
+
+    
+<form name="myForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color" required>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
